@@ -1,8 +1,12 @@
-package com.kpason.DemoApp.model;
+package com.kpason.DemoApp.user.model.entity;
 
 
 import jakarta.persistence.*;
 import lombok.Data;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
+import java.sql.Timestamp;
 
 @Data
 @Entity
@@ -19,4 +23,8 @@ public class User {
     private String email;
     private String phone;
     private String imageUrl;
+    @CreationTimestamp
+    private Timestamp tsCreated;
+    @UpdateTimestamp
+    private Timestamp tsModified;
 }
